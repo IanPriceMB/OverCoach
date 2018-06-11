@@ -2,13 +2,47 @@
 <html>
  
 <head>
-    <title>Passport with Sequelize</title>
+    <title>OverCoached</title>
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
 </head>
  
 <body>
-    <h2>Dashboard</h2>
-    <h5>Hurray! you are logged in.</h5>
- 
+    <header class="mainScreen-Header">
+        {{!-- title image goes here --}}
+        <nav class="mainScreen-Header-Nav">
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <toolbar class="mainScreen-toolbar">
+        <div class="toolbar-dropdown-maps">
+            <button class="toolbar-dropdownapsbtn">Maps</button>
+        <div id="mapDropDown" class="map-dropdown-content">      
+        {{!-- maps go here --}}
+        </div>
+        <div class="toolbar-dropdown-colors">
+            <button onclick="dropDownColors()" class="toolbar-dropdown-colorbtn">Color</button>
+        </div>
+        <div id="colorDropDown" class="color-dropdown-content">
+            <li class="color-dropdown" id="color-dropdown-red"></li>
+            <li class="color-dropdown" id="color-dropdown-blue"></li>
+            <li class="color-dropdown" id="color-dropdown-black"></li>
+        </div>
+        <button class="toolbar-btn" id="save-btn">Save</button>
+        <button class="toolbar-btn" id="undo-btn">Undo</button>
+    </toolbar>
+    <sidebar class="mainScreen-sidebar">
+        <div class="sidebar-characters" id="redCharacters"></div>
+        {{!-- ptreon goes here --}}
+        <div class="sidebar-characters" id="blueCharacters"></div>
+    </sidebar>
+    <div class="map-div">
+
+    </div>
+    <canvas class="canvas-div" id="drawzone">
+
+    </canvas>
+    <script href="/js/dashbaord.js"></script>
 </body>
  
 </html>
