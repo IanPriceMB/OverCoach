@@ -73,11 +73,7 @@ body, html{
 .large{width: 200%; height: auto;}
 
 .canvas-div{
-    position: fixed;
-    overflow-x: auto;
-    overflow-y: auto;
-    width: 78.5%;
-    height: 81%;
+    position: fixed; 
     /* background-color: purple; */
     z-index: 2;
     top: 12%;
@@ -134,3 +130,12 @@ body, html{
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/* way the hell off screen */
+.scrollbar-measure {
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+}

@@ -61,6 +61,7 @@ $(document).ready(function(){
         $('.map-div').empty()
         $('.map-div').append('<img id="mapMe">')
         $('#mapMe').attr('src', path)
+        matchCanvas();
     })
     $('#zoom-small').on('click', function(){
         document.getElementById("mapMe").classList.toggle("small");
@@ -72,3 +73,30 @@ $(document).ready(function(){
         document.getElementById("mapMe").classList.toggle("large");
     })
 });
+function matchCanvas() {
+    var scrollDiv = document.createElement("div");
+
+    scrollDiv.className = "scrollbar-measure";
+    document.getElementById('mapzone').appendChild(scrollDiv);
+    
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    var scrollbarHeight = scrollDiv.offsetHeight - scrollDiv.clientHeight;
+    document.getElementById('mapzone').removeChild(scrollDiv);
+
+    var myCanvas = document.getElementById("drawzone");
+    myCanvas.width = (document.getElementById('mapzone').clientWidth)-scrollbarWidth;
+    myCanvas.height = (document.getElementById('mapzone').clientHeight)-scrollbarHeight;
+
+    init();
+}
+function init() {
+    canvas = document.getElementById('drawzone');
+    context = canvas.getContext('2d');
+    context.strokeStyle = colorChoice;
+    context.lineWidth = 10;
+    context.lineCap = 'round';
+
+    canvas.addEventListener('mousedown', dragStart, false);
+    canvas.addEventListener('mousemove', drag, false);
+    canvas.addEventListener('mouseup', dragStop, false);
+}

@@ -29,10 +29,10 @@
         <div class="toolbar-item">
             <button class="toolbar-btn dropDownColorsBtn">Pen Colors</button>
             <div id="colorDropDown" class="color-dropdown-content">
-                <li class="color-dropdown" id="color-dropdown-red"></li>
-                <li class="color-dropdown" id="color-dropdown-blue"></li>
-                <li class="color-dropdown" id="color-dropdown-black"></li>
-                <li class="color-dropdown" id="color-dropdown-white"></li>
+                <li class="color-dropdown" id="color-dropdown-red" data-color="red"></li>
+                <li class="color-dropdown" id="color-dropdown-blue" data-color="blue"></li>
+                <li class="color-dropdown" id="color-dropdown-black" data-color="black"></li>
+                <li class="color-dropdown" id="color-dropdown-white" data-color="white"></li>
             </div>
         </div>
         <div class="toolbar-zoom">
@@ -59,13 +59,14 @@
         <img class="patreon" src="/OverCoach/Patreon.png">
         <div class="sidebar-characters" id="blueCharacters"></div>
     </sidebar>
-    <div class="map-div">
+    <div class="map-div" id="mapzone">
 
     </div>
     <canvas class="canvas-div" id="drawzone">
 
     </canvas>
     <script src="/js/dashbaord.js"></script>
+    <script src="/js/draw.js"></script>
 </body>
  
 </html>
