@@ -3,7 +3,12 @@
  
 <head>
     <title>OverCoached</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 </head>
  
 <body>
@@ -14,26 +19,28 @@
             <a href="/logout">Logout</a>
         </nav>
     </header>
-    <toolbar class="mainScreen-toolbar">
-        <div class="toolbar-dropdown-maps">
-            <button class="toolbar-dropdownapsbtn">Maps</button>
-        <div id="mapDropDown" class="map-dropdown-content">      
-        {{!-- maps go here --}}
+    <toolbar class="mainScreen-toolbar clearfix">
+        <div class="toolbar-item">
+            <button class="toolbar-btn dropDownMapsBtn">Maps</button>
+            <div id="mapDropDown" class="map-dropdown-content">      
+            {{!-- maps go here --}}
+            </div>
         </div>
-        <div class="toolbar-dropdown-colors">
-            <button onclick="dropDownColors()" class="toolbar-dropdown-colorbtn">Color</button>
+        <div class="toolbar-item">
+            <button class="toolbar-btn dropDownColorsBtn">Pen Colors</button>
+            <div id="colorDropDown" class="color-dropdown-content">
+                <li class="color-dropdown" id="color-dropdown-red"></li>
+                <li class="color-dropdown" id="color-dropdown-blue"></li>
+                <li class="color-dropdown" id="color-dropdown-black"></li>
+            </div>
         </div>
-        <div id="colorDropDown" class="color-dropdown-content">
-            <li class="color-dropdown" id="color-dropdown-red"></li>
-            <li class="color-dropdown" id="color-dropdown-blue"></li>
-            <li class="color-dropdown" id="color-dropdown-black"></li>
+        <div class="toolbar-item">
+            <button class="toolbar-btn saveBtn" id="save-btn">Save</button>
         </div>
-        <button class="toolbar-btn" id="save-btn">Save</button>
-        <button class="toolbar-btn" id="undo-btn">Undo</button>
     </toolbar>
     <sidebar class="mainScreen-sidebar">
         <div class="sidebar-characters" id="redCharacters"></div>
-        {{!-- ptreon goes here --}}
+        <img class="patreon" src="/OverCoach/Patreon.png">
         <div class="sidebar-characters" id="blueCharacters"></div>
     </sidebar>
     <div class="map-div">
@@ -42,7 +49,7 @@
     <canvas class="canvas-div" id="drawzone">
 
     </canvas>
-    <script href="/js/dashbaord.js"></script>
+    <script src="/js/dashbaord.js"></script>
 </body>
  
 </html>

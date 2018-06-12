@@ -20,29 +20,41 @@ const mapsArr=
         "volskaya_map",
         "watchpoint_map",
     ]
-const mapPath = "../OverCoach/OverwatchMaps/"
+const charactersArr= 
+[
+    'Ana', 'Bastion', 'Brigette', 'Doomfist',
+    'Dva', 'Genji', 'Hanzo', 'Junkrat',
+    'Lucio', 'McCree', 'Mei', 'Mercy',
+    'Moira', 'Orisa', 'Phara', 'Reaper',
+    'Reinhardt', 'Soldier', 'Sombra', 'Symmetra',
+    'Torbjorn', 'Tracer', 'Widowmaker', 'Winston',
+    'Zarya', 'Zenyatta'
+]
+const mapPath = "/OverCoach/OverwatchMaps/"
+const redPath = '/OverCoach/redHeroes/'
+const bluePath = '/OverCoach/blueHeroes/'
 
-$('#mapDropDown').on('click', function(){
-    document.getElementById("mapDropDown").classList.toggle("show");
-    for (let i = 0; i < mapsArr.Length; i++){
-        var mapDiv = $("<div>")
-        mapDiv.addClass('map-name')
-        mapDiv.attr('id', mapsArr[i])
-        mapDiv.text(mapsArr[i])
-    }
-    $('mapDropDown').append(mapDiv)
-})
-
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.mapDropDown')) {
-    var dropdowns = document.getElementsByClassName("map-name");
-    for (let i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
+for (let p = 0; p < charactersArr.length; p++){
+    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'">');
+    $('#red'+ charactersArr[p]).append("<img id='redHero"+charactersArr[p]+"'>")
+    $("#redHero" + charactersArr[p]).attr("src", redPath+charactersArr[p]+'.png');
 }
+for (let p = 0; p < charactersArr.length; p++){
+    $('#blueCharacters').append('<div class="hero" id="blue'+charactersArr[p]+'">');
+    $('#blue'+ charactersArr[p]).append("<img id='blueHero"+charactersArr[p]+"'>")
+    $("#blueHero" + charactersArr[p]).attr("src", bluePath+charactersArr[p]+'.png');
+}
+for (let i = 0; i < mapsArr.length; i++){
+    $("#mapDropDown").append("<div class='map-name' id='"+mapsArr[i]+"' data-img-src='" + mapPath + mapsArr[i] +".png'>")
+    $('#'+mapsArr[i]).text(mapsArr[i].replace(/_/g, " "));
+}
+
+
+$(document).ready(function(){
+$('.dropDownMapsBtn').on('click', function(){
+    document.getElementById("mapDropDown").classList.toggle("show");
+})
+$('.dropDownColorsBtn').on('click', function(){
+    document.getElementById("colorDropDown").classList.toggle("show");
+})
+});
