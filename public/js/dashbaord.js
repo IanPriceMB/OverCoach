@@ -33,12 +33,12 @@ const redPath = '/OverCoach/redHeroes/'
 const bluePath = '/OverCoach/blueHeroes/'
 
 for (let p = 0; p < charactersArr.length; p++){
-    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'" draggable="true">');
+    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'" data-name="red'+charactersArr[p]+'" draggable="true">');
     $('#red'+ charactersArr[p]).append("<img id='redHero"+charactersArr[p]+"'>")
     $("#redHero" + charactersArr[p]).attr("src", redPath+charactersArr[p]+'.png');
 }
 for (let p = 0; p < charactersArr.length; p++){
-    $('#blueCharacters').append('<div class="hero" id="blue'+charactersArr[p]+'">');
+    $('#blueCharacters').append('<div class="hero" id="blue'+charactersArr[p]+'" data-name="blue'+charactersArr[p]+'">');
     $('#blue'+ charactersArr[p]).append("<img id='blueHero"+charactersArr[p]+"'>")
     $("#blueHero" + charactersArr[p]).attr("src", bluePath+charactersArr[p]+'.png');
 }
