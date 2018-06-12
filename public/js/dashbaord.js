@@ -33,7 +33,7 @@ const redPath = '/OverCoach/redHeroes/'
 const bluePath = '/OverCoach/blueHeroes/'
 
 for (let p = 0; p < charactersArr.length; p++){
-    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'">');
+    $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'" draggable="true">');
     $('#red'+ charactersArr[p]).append("<img id='redHero"+charactersArr[p]+"'>")
     $("#redHero" + charactersArr[p]).attr("src", redPath+charactersArr[p]+'.png');
 }
@@ -65,12 +65,15 @@ $(document).ready(function(){
     })
     $('#zoom-small').on('click', function(){
         document.getElementById("mapMe").classList.toggle("small");
+        matchCanvas2()
     })
     $('#zoom-medium').on('click', function(){
         document.getElementById("mapMe").classList.toggle("medium");
+        matchCanvas2()
     })
     $('#zoom-large').on('click', function(){
         document.getElementById("mapMe").classList.toggle("large");
+        matchCanvas2()
     })
 });
 function matchCanvas() {
@@ -89,6 +92,15 @@ function matchCanvas() {
 
     init();
 }
+function matchCanvas2() {
+    var myCanvas = document.getElementById("drawzone");
+    myCanvas.width = (document.getElementById('mapzone').clientWidth)-scrollbarWidth;
+    myCanvas.height = (document.getElementById('mapzone').clientHeight)-scrollbarHeight;
+
+    init();
+}
+
+
 function init() {
     canvas = document.getElementById('drawzone');
     context = canvas.getContext('2d');

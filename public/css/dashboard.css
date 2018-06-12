@@ -2,6 +2,7 @@ body, html{
     height: 100%;
     background-color: rgb(29, 28, 28);
 }
+/* Header section */
 .mainScreen-Header{
     width: 100%;
     height: 9%;
@@ -15,15 +16,14 @@ body, html{
 .mainScreen-Header-Nav{
     width: 30%;
     height: 100%;
+    float: right;
 }
 .mainScreen-Header-Nav a{
     font-size: 2em;
     margin: 5% 10%; 
     float: right;
 }
-.mainScreen-Header-Nav{
-    float: right;
-}
+/* Toolbar section */
 .mainScreen-toolbar{
     width: 100%;
     height: 3%;
@@ -36,6 +36,11 @@ body, html{
 .toolbar-btn{
     width: 100%;
 }
+/* zoom buttons for the maps */
+.small{width: 50%; height: auto;}
+.medium{width: 150%; height: auto;}
+.large{width: 200%; height: auto;}
+/* Sidebar section */
 .mainScreen-sidebar{
     float: right;
     width: 20%;
@@ -56,10 +61,7 @@ body, html{
     max-width: 100%;
     max-height: auto; 
 }
-#color-dropdown-red{background-color: red;}
-#color-dropdown-blue{background-color: blue;}
-#color-dropdown-black{background-color: black;}
-#color-dropdown-white{background-color: white;}
+/* map and canvas section */
 .map-div{
     position: relative;
     overflow-x: auto;
@@ -67,17 +69,21 @@ body, html{
     width: 80%;
     height: 83%;
 }
-/* zoom buttons for the maps */
-.small{width: 50%; height: auto;}
-.medium{width: 150%; height: auto;}
-.large{width: 200%; height: auto;}
-
 .canvas-div{
     position: fixed; 
-    /* background-color: purple; */
     z-index: 2;
     top: 12%;
 }
+.map-div img{
+    position: absolute;
+    z-index: 1;
+}
+
+/* Dropdown section */
+#color-dropdown-red{background-color: red;}
+#color-dropdown-blue{background-color: blue;}
+#color-dropdown-black{background-color: black;}
+#color-dropdown-white{background-color: white;}
 
 /* Dropdown Button */
 .dropDownMapsBtn, .dropDownColorsBtn, .saveBtn,
@@ -110,7 +116,7 @@ body, html{
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
+    z-index: 80;
 }
 
 /* Links inside the dropdown */
@@ -131,11 +137,15 @@ body, html{
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-/* way the hell off screen */
+/* used to measure the size of scrollbars and adjust the canvas */
 .scrollbar-measure {
 	width: 100px;
 	height: 100px;
 	overflow: scroll;
 	position: absolute;
 	top: -9999px;
+}
+/* class changes for draggables */
+.invisible{
+    display: none;
 }
