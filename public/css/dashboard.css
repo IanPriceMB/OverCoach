@@ -1,10 +1,16 @@
 body, html{
     height: 100%;
+    background-color: rgb(29, 28, 28);
 }
 .mainScreen-Header{
     width: 100%;
-    background-color: black;
     height: 9%;
+}
+.mainScreen-Header img{
+    float: left;
+    margin-left: 20%;
+    max-height: 95%;
+    max-width: auto;
 }
 .mainScreen-Header-Nav{
     width: 30%;
@@ -21,7 +27,6 @@ body, html{
 .mainScreen-toolbar{
     width: 100%;
     height: 3%;
-    background-color: black;
     float: left;
 }
 .toolbar-item{
@@ -34,7 +39,6 @@ body, html{
 .mainScreen-sidebar{
     float: right;
     width: 20%;
-    background-color: black;
 }
 .sidebar-characters{
     height: 35vh;
@@ -73,8 +77,8 @@ body, html{
     position: fixed;
     overflow-x: auto;
     overflow-y: auto;
-    width: 80%;
-    height: 83%;
+    width: 78.5%;
+    height: 81%;
     /* background-color: purple; */
     z-index: 2;
     top: 12%;
@@ -82,7 +86,7 @@ body, html{
 
 /* Dropdown Button */
 .dropDownMapsBtn, .dropDownColorsBtn, .saveBtn {
-    background-color: grey;
+    background-color: rgb(71, 68, 68);
     color: white;
     font-size: 16px;
     height: 100%;
@@ -91,7 +95,7 @@ body, html{
 }
 
 /* Dropdown button on hover & focus */
-.dropDownMapsBtn:focus, .dropDownColorsBtn:focus, .saveBtn:focus,.dropDownMapsBtn:hover, .dropDownColorsBtn:hover, .saveBtn:Hover {
+.dropDownMapsBtn:focus, .dropDownColorsBtn:focus,.dropDownMapsBtn:hover, .dropDownColorsBtn:hover, .saveBtn:Hover {
     background-color: #2980B9;
 }
 
@@ -107,7 +111,7 @@ body, html{
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
 }
 
 /* Links inside the dropdown */

@@ -57,4 +57,10 @@ $('.dropDownMapsBtn').on('click', function(){
 $('.dropDownColorsBtn').on('click', function(){
     document.getElementById("colorDropDown").classList.toggle("show");
 })
+$('.map-name').on('click', function(){
+    var path = $(this).attr('data-img-src')
+    $('.map-div').empty()
+    $('.map-div').append('<img id="mapMe">')
+    $('#mapMe').attr('src', path)
+})
 });
