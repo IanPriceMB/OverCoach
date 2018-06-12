@@ -29,8 +29,8 @@ body, html{
     height: 3%;
     float: left;
 }
-.toolbar-item{
-    width: 20%;
+.toolbar-item, .toolbar-zoom{
+    width: 10%;
     height: 100%;
 }
 .toolbar-btn{
@@ -56,23 +56,22 @@ body, html{
     max-width: 100%;
     max-height: auto; 
 }
-#color-dropdown-red{
-    background-color: red;
-}
-#color-dropdown-blue{
-    background-color: blue;
-}
-#color-dropdown-black{
-    background-color: black;
-}
+#color-dropdown-red{background-color: red;}
+#color-dropdown-blue{background-color: blue;}
+#color-dropdown-black{background-color: black;}
+#color-dropdown-white{background-color: white;}
 .map-div{
     position: relative;
     overflow-x: auto;
     overflow-y: auto;
     width: 80%;
     height: 83%;
-    /* background-color: powderblue; */
 }
+/* zoom buttons for the maps */
+.small{width: 50%; height: auto;}
+.medium{width: 150%; height: auto;}
+.large{width: 200%; height: auto;}
+
 .canvas-div{
     position: fixed;
     overflow-x: auto;
@@ -85,7 +84,9 @@ body, html{
 }
 
 /* Dropdown Button */
-.dropDownMapsBtn, .dropDownColorsBtn, .saveBtn {
+.dropDownMapsBtn, .dropDownColorsBtn, .saveBtn,
+#zoom-small, #zoom-medium, #zoom-large,
+#lines-btn, #heroes-btn{
     background-color: rgb(71, 68, 68);
     color: white;
     font-size: 16px;
@@ -95,12 +96,14 @@ body, html{
 }
 
 /* Dropdown button on hover & focus */
-.dropDownMapsBtn:focus, .dropDownColorsBtn:focus,.dropDownMapsBtn:hover, .dropDownColorsBtn:hover, .saveBtn:Hover {
+.dropDownMapsBtn:focus, .dropDownColorsBtn:focus,.dropDownMapsBtn:hover, 
+.dropDownColorsBtn:hover, .saveBtn:hover, #zoom-small:hover, 
+#zoom-medium:hover, #zoom-large:hover, #lines-btn:hover, #hereos-btn:hover {
     background-color: #2980B9;
 }
 
 /* The container <div> - needed to position the dropdown content */
-.toolbar-item {
+.toolbar-item, .toolbar-zoom {
     position: relative;
     display: inline-block;
 }

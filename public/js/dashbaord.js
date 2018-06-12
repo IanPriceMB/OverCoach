@@ -50,16 +50,25 @@ for (let i = 0; i < mapsArr.length; i++){
 
 
 $(document).ready(function(){
-$('.dropDownMapsBtn').on('click', function(){
-    document.getElementById("mapDropDown").classList.toggle("show");
-})
-$('.dropDownColorsBtn').on('click', function(){
-    document.getElementById("colorDropDown").classList.toggle("show");
-})
-$('.map-name').on('click', function(){
-    var path = $(this).attr('data-img-src')
-    $('.map-div').empty()
-    $('.map-div').append('<img id="mapMe">')
-    $('#mapMe').attr('src', path)
-})
+    $('.dropDownMapsBtn').on('click', function(){
+        document.getElementById("mapDropDown").classList.toggle("show");
+    })
+    $('.dropDownColorsBtn').on('click', function(){
+        document.getElementById("colorDropDown").classList.toggle("show");
+    })
+    $('.map-name').on('click', function(){
+        var path = $(this).attr('data-img-src')
+        $('.map-div').empty()
+        $('.map-div').append('<img id="mapMe">')
+        $('#mapMe').attr('src', path)
+    })
+    $('#zoom-small').on('click', function(){
+        document.getElementById("mapMe").classList.toggle("small");
+    })
+    $('#zoom-medium').on('click', function(){
+        document.getElementById("mapMe").classList.toggle("medium");
+    })
+    $('#zoom-large').on('click', function(){
+        document.getElementById("mapMe").classList.toggle("large");
+    })
 });
