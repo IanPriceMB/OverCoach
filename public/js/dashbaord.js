@@ -1,24 +1,22 @@
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
 const mapsArr=
     [
-        "anubis_map",
-        "blizzworld_map",
-        "dorado_map",
-        "eich_map",
-        "hana_map",
-        "holly_map",
-        "horizon_map",
-        "ilios_map",
-        "junk_map",
-        "kings_map",
-        "lijiang_map",
-        "nepal_map",
-        "numbani_map",
-        "oasis_map",
-        "route_map",
-        "volskaya_map",
-        "watchpoint_map",
+        "Blizzard_World",
+        "Dorado",
+        "Eichenwalde",
+        "Hanamura",
+        "Hollywood",
+        "Horizon_Lunar_Colony",
+        "Ilios",
+        "Junkertown",
+        "Kings_Row",
+        "Lijiang_Tower",
+        "Nepal",
+        "Numbani",
+        "Oasis",
+        "Route_66",
+        "Temple_of_Anubis",
+        "Volskaya_Industries",
+        "Watchpoint_Gibraltar",
     ]
 const charactersArr= 
 [
@@ -45,6 +43,7 @@ for (let p = 0; p < charactersArr.length; p++){
     $("#blueHero" + charactersArr[p]).attr("src", bluePath+charactersArr[p]+'.png');
 }
 for (let i = 0; i < mapsArr.length; i++){
+    console.log('hi')
     $("#mapDropDown").append("<div class='map-name' id='"+mapsArr[i]+"' data-img-src='" + mapPath + mapsArr[i] +".png'>")
     $('#'+mapsArr[i]).text(mapsArr[i].replace(/_/g, " "));
 }
