@@ -37,7 +37,7 @@ body, html{
     width: 100%;
 }
 /* zoom buttons for the maps */
-.small{width: 50%; height: auto;}
+.small{width: 100%; height: auto;}
 .medium{width: 150%; height: auto;}
 .large{width: 200%; height: auto;}
 /* Sidebar section */
@@ -53,7 +53,7 @@ body, html{
     width: 20%;
     float: left;
 }
-.hero img{
+.hero img, .movedHero{
     max-width: 100%;
     max-height: auto;
 }

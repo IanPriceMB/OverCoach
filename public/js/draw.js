@@ -57,11 +57,12 @@ $('.color-dropdown').on('click', function(){
     colorChoice = $(this).attr('data-color')
     init();
 })
+
 function init() {
     canvas = document.getElementById('drawzone');
     context = canvas.getContext('2d');
     context.strokeStyle = colorChoice;
-    context.lineWidth = 10;
+    context.lineWidth = 4;
     context.lineCap = 'round';
 
     canvas.addEventListener('mousedown', dragStart, false);

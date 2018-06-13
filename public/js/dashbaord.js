@@ -34,12 +34,12 @@ const bluePath = '/OverCoach/blueHeroes/'
 
 for (let p = 0; p < charactersArr.length; p++){
     $('#redCharacters').append('<div class="hero" id="red'+charactersArr[p]+'" data-name="red'+charactersArr[p]+'" draggable="true">');
-    $('#red'+ charactersArr[p]).append("<img id='redHero"+charactersArr[p]+"'>")
+    $('#red'+ charactersArr[p]).append("<img id='redHero"+charactersArr[p]+"' data-name='redHero"+charactersArr[p]+"'>")
     $("#redHero" + charactersArr[p]).attr("src", redPath+charactersArr[p]+'.png');
 }
 for (let p = 0; p < charactersArr.length; p++){
     $('#blueCharacters').append('<div class="hero" id="blue'+charactersArr[p]+'" data-name="blue'+charactersArr[p]+'">');
-    $('#blue'+ charactersArr[p]).append("<img id='blueHero"+charactersArr[p]+"'>")
+    $('#blue'+ charactersArr[p]).append("<img id='blueHero"+charactersArr[p]+"' data-name='blueHero"+charactersArr[p]+"'>")
     $("#blueHero" + charactersArr[p]).attr("src", bluePath+charactersArr[p]+'.png');
 }
 for (let i = 0; i < mapsArr.length; i++){
@@ -48,7 +48,7 @@ for (let i = 0; i < mapsArr.length; i++){
     $('#'+mapsArr[i]).text(mapsArr[i].replace(/_/g, " "));
 }
 
-
+// creating dropdowns the map of choice and the zoom buttons
 $(document).ready(function(){
     $('.dropDownMapsBtn').on('click', function(){
         document.getElementById("mapDropDown").classList.toggle("show");
@@ -61,21 +61,23 @@ $(document).ready(function(){
         $('.map-div').empty()
         $('.map-div').append('<img id="mapMe">')
         $('#mapMe').attr('src', path)
+        $('#mapMe').addClass('small')
         matchCanvas();
     })
     $('#zoom-small').on('click', function(){
-        document.getElementById("mapMe").classList.toggle("small");
+        document.getElementById("mapMe").className = "small";
         matchCanvas2()
     })
     $('#zoom-medium').on('click', function(){
-        document.getElementById("mapMe").classList.toggle("medium");
+        document.getElementById("mapMe").className = "medium";
         matchCanvas2()
     })
     $('#zoom-large').on('click', function(){
-        document.getElementById("mapMe").classList.toggle("large");
+        document.getElementById("mapMe").className = "large";
         matchCanvas2()
     })
 });
+// this whole section is for dynamically matching the canvas to the map size
 function matchCanvas() {
     var scrollDiv = document.createElement("div");
 
@@ -89,23 +91,19 @@ function matchCanvas() {
     var myCanvas = document.getElementById("drawzone");
     myCanvas.width = (document.getElementById('mapzone').clientWidth)-scrollbarWidth;
     myCanvas.height = (document.getElementById('mapzone').clientHeight)-scrollbarHeight;
-
     init();
 }
 function matchCanvas2() {
     var myCanvas = document.getElementById("drawzone");
     myCanvas.width = (document.getElementById('mapzone').clientWidth)-scrollbarWidth;
     myCanvas.height = (document.getElementById('mapzone').clientHeight)-scrollbarHeight;
-
     init();
 }
-
-
 function init() {
     canvas = document.getElementById('drawzone');
     context = canvas.getContext('2d');
     context.strokeStyle = colorChoice;
-    context.lineWidth = 10;
+    context.lineWidth = 4;
     context.lineCap = 'round';
 
     canvas.addEventListener('mousedown', dragStart, false);
