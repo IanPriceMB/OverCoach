@@ -68,7 +68,6 @@ function findHero(hero){
     $(hero).attr('style', `position: absolute;top:${posY}px;left:${posX}px;z-index:10;width: 3%; height: auto;`)
 }
 function heroEnd(position){
-    console.log(this)
     hero = $(this).attr('data-name');
     heroObj[hero] = new OnBoard(this, position)  
     this.className = 'moved'; 

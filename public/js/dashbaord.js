@@ -78,10 +78,31 @@ $(document).ready(function(){
         document.getElementById("mapMe").className = "large";
         matchCanvas2()
     })
-    $('#herotoggle').on('click', function(){
-        $('#mapMe').toggleClass('movedHero')
-        $('#mapMe').toggleClass('invis')
+    $('#about').on('click', function(){
+        $('body').append('<div class="about-div">')
+        $('.about-div').append('<p class="about-p">')
+        $('.about-p').html(`Over Coach is a project I made for my web design class.
+        <br>
+        <br>
+        If you support this project on Patreon I will continue to update it wih more content.
+        <br>
+        <br>
+        right now you can only draw in straight lines and the lines wont grow and shrink with the zoom buttons but the heroes will.
+        <br>
+        <br>
+        I hope you enjoy Over Coach!
+        <br>
+        <br>
+        -Ian Price
+        <br>
+        <br>`)
+        $('.about-div').append('<button class="closeBtn">')
+        $('.closeBtn').text('close')
     })
+    $(document).on("click", ".closeBtn", function() {
+        // alert("hit it");
+        $(".about-div").remove();
+    });
 });
 // this whole section is for dynamically matching the canvas to the map size
 function matchCanvas() {

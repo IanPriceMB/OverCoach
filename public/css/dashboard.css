@@ -78,7 +78,7 @@ body, html{
     z-index: 2;
     top: 12%;
 }
-.movedHero{
+.map-div img{
     position: absolute;
     z-index: 1;
 }
@@ -90,9 +90,7 @@ body, html{
 #color-dropdown-white{background-color: white;}
 
 /* Dropdown Button */
-.dropDownMapsBtn, .dropDownColorsBtn, .saveBtn,
-#zoom-small, #zoom-medium, #zoom-large,
-#lines-btn, #heroes-btn, #herotoggle{
+.toolbar-btn{
     background-color: rgb(71, 68, 68);
     color: white;
     font-size: 16px;
@@ -102,10 +100,7 @@ body, html{
 }
 
 /* Dropdown button on hover & focus */
-.dropDownMapsBtn:focus, .dropDownColorsBtn:focus,.dropDownMapsBtn:hover, 
-.dropDownColorsBtn:hover, .saveBtn:hover, #zoom-small:hover, 
-#zoom-medium:hover, #zoom-large:hover, #lines-btn:hover, #hereos-btn:hover,
-#herotoggle:hover, #herotoggle:focus {
+.toolbar-btn:hover, .toolbar-btn:focus {
     background-color: #2980B9;
 }
 
@@ -154,8 +149,18 @@ body, html{
 .invisible{
     display: none;
 }
-.invis{
-    position: absolute;
-    z-index: 3;
-    opacity: .3;
+
+.about-div{
+    position: fixed;
+    top: 100px;
+    border: solid white 3px;
+    border-radius: 5px;
+    background-color: black;
+    width: 30%;
+    z-index: 1000;
+}
+.about-p{
+    color: white;
+    width: 90%;
+    margin: 0 auto;
 }
