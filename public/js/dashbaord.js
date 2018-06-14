@@ -78,6 +78,10 @@ $(document).ready(function(){
         document.getElementById("mapMe").className = "large";
         matchCanvas2()
     })
+    $('#herotoggle').on('click', function(){
+        $('#mapMe').toggleClass('movedHero')
+        $('#mapMe').toggleClass('invis')
+    })
 });
 // this whole section is for dynamically matching the canvas to the map size
 function matchCanvas() {

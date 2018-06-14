@@ -44,9 +44,6 @@ OnBoard = function (ha, pos){
     this.name = $(ha).attr('data-name');
     this.id = $(ha).children().attr('data-name');
 
-    this.newPosX;
-    this.newPosY;
-
     this.heroHeight = document.getElementById(this.id).height/2;
     this.leftScroll = $('#mapzone').scrollLeft();
     this.topScroll = $('#mapzone').scrollTop();
@@ -61,19 +58,17 @@ function findHero(hero){
     for (var i = 0; i < redCharacters.length; i++){
         if(redCharacters[i]===$(hero).attr('data-name')){
             for (key in heroObj){
-                if(key == heroObj[key].name){
+                if(redCharacters[i] == heroObj[key].name){
                     posX = heroObj[key].posX
                     posY = heroObj[key].posY
-
-                    heroObj[key].newPosX = heroObj[key].posX
-                    heroObj[key].newPosY = heroObj[key].posY
                 }
             }
         }
     }
-    $(hero).attr('style', `position: absolute;top:${posY}px;left:${posX}px;z-index:2;width: 3%; height: auto;`)
+    $(hero).attr('style', `position: absolute;top:${posY}px;left:${posX}px;z-index:10;width: 3%; height: auto;`)
 }
 function heroEnd(position){
+    console.log(this)
     hero = $(this).attr('data-name');
     heroObj[hero] = new OnBoard(this, position)  
     this.className = 'moved'; 
@@ -112,11 +107,11 @@ function smallHero(hero){
                     if(previousState=='large'){
                         heroObj[key].posX/=2;
                         heroObj[key].posY/=2;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } else if (previousState=='medium'){
                         heroObj[key].posX/=1.5;
                         heroObj[key].posY/=1.5;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } 
                 }
             }
@@ -131,11 +126,11 @@ function mediumHero(hero){
                     if(previousState=='small'){
                         heroObj[key].posX*=1.5;
                         heroObj[key].posY*=1.5;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } else if (previousState=='large'){
                         heroObj[key].posX*=.75;
                         heroObj[key].posY*=.75;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } 
                 }
             }
@@ -151,11 +146,11 @@ function largeHero(hero){
                     if(previousState=='small'){
                         heroObj[key].posX*=2;
                         heroObj[key].posY*=2;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } else if (previousState=='medium'){
                         heroObj[key].posX/=.75;
                         heroObj[key].posY/=.75;
-                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:10;width: 3%; height: auto;`)
                     } 
                 }
             }

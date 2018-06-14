@@ -78,7 +78,7 @@ body, html{
     z-index: 2;
     top: 12%;
 }
-.map-div img{
+.movedHero{
     position: absolute;
     z-index: 1;
 }
@@ -92,7 +92,7 @@ body, html{
 /* Dropdown Button */
 .dropDownMapsBtn, .dropDownColorsBtn, .saveBtn,
 #zoom-small, #zoom-medium, #zoom-large,
-#lines-btn, #heroes-btn{
+#lines-btn, #heroes-btn, #herotoggle{
     background-color: rgb(71, 68, 68);
     color: white;
     font-size: 16px;
@@ -104,7 +104,8 @@ body, html{
 /* Dropdown button on hover & focus */
 .dropDownMapsBtn:focus, .dropDownColorsBtn:focus,.dropDownMapsBtn:hover, 
 .dropDownColorsBtn:hover, .saveBtn:hover, #zoom-small:hover, 
-#zoom-medium:hover, #zoom-large:hover, #lines-btn:hover, #hereos-btn:hover {
+#zoom-medium:hover, #zoom-large:hover, #lines-btn:hover, #hereos-btn:hover,
+#herotoggle:hover, #herotoggle:focus {
     background-color: #2980B9;
 }
 
@@ -152,4 +153,9 @@ body, html{
 /* class changes for draggables */
 .invisible{
     display: none;
+}
+.invis{
+    position: absolute;
+    z-index: 3;
+    opacity: .3;
 }
