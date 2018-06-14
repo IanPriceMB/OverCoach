@@ -52,8 +52,9 @@ OnBoard = function (ha, pos){
     this.topScroll = $('#mapzone').scrollTop();
 
     this.posX = pos.x+this.leftScroll;
-    this.posY = pos.y-this.topScroll-this.heroHeight;
+    this.posY = pos.y+this.topScroll-this.heroHeight;
 }
+
 function findHero(hero){
     var posX;
     var posY;
@@ -63,6 +64,9 @@ function findHero(hero){
                 if(key == heroObj[key].name){
                     posX = heroObj[key].posX
                     posY = heroObj[key].posY
+
+                    heroObj[key].newPosX = heroObj[key].posX
+                    heroObj[key].newPosY = heroObj[key].posY
                 }
             }
         }
@@ -76,7 +80,6 @@ function heroEnd(position){
     heroSize(this);
     findHero(this);
     $('#mapzone').append(this)
-    console.log(heroObj)
 }
 
 //making the hero icons small on the map
