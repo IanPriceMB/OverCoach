@@ -1,3 +1,8 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(29, 28, 28);
+}
 /* Header section */
 .mainScreen-Header{
     width: 100%;
@@ -11,18 +16,24 @@
     max-width: auto;
 }
 /* form positioning */
+div{
+    width: 40%;
+    margin: 40px auto;
+}
 form {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-gap: 16px;
+    float: left;
+    margin: 40px auto;
+    width: 100%;
+    border: solid white 1px;
+    border-radius: 10px;
     color: white;
-
+    background-color: black;
 }
-label {
-    grid-column: 1 / 2;
-}
- 
-input,
 button {
-    grid-column: 2 / 3;
+    float: left;
+    margin: 40px auto;
+    width: 100%;
+    padding: 20px;
+    background-color: red;
+    font-size: 28px;
 }

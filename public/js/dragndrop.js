@@ -71,7 +71,7 @@ function findHero(hero){
             }
         }
     }
-    $(hero).attr('style', `position: absolute;top:${posY}px;left:${posX}px;z-index:2;${size}`)
+    $(hero).attr('style', `position: absolute;top:${posY}px;left:${posX}px;z-index:2;width: 3%; height: auto;`)
 }
 function heroEnd(position){
     hero = $(this).attr('data-name');
@@ -83,7 +83,6 @@ function heroEnd(position){
 }
 
 //making the hero icons small on the map
-var size = 'width: 3%; height: auto;';
 function heroSize(ha){
     $(ha).children().addClass('movedHero')
 }
@@ -104,24 +103,20 @@ $('#heroes-btn').on('click', function(){
     }
     dragability();
 })
-//rezising the heros already on the map on zoom should only work if you place while in small mode
-//for it to work i would need to make a new vaiable in the constuctors tha i would update with the math
-//i think
+//rezising the heros already on the map on zoom 
 function smallHero(hero){
-    var newPosX;
-    var newPosY;
     for (var i = 0; i < redCharacters.length; i++){
         if(redHeroCharacters[i]===$(hero).attr('data-name')){
             for (key in heroObj){
                 if(redCharacters[i] == heroObj[key].name){
                     if(previousState=='large'){
-                        newPosX = heroObj[key].posX;
-                        newPosY = heroObj[key].posY;
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
+                        heroObj[key].posX/=2;
+                        heroObj[key].posY/=2;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
                     } else if (previousState=='medium'){
-                        newPosX = heroObj[key].posX;
-                        newPosY =  heroObj[key].posY;
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
+                        heroObj[key].posX/=1.5;
+                        heroObj[key].posY/=1.5;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
                     } 
                 }
             }
@@ -129,21 +124,19 @@ function smallHero(hero){
     }
 }
 function mediumHero(hero){
-    var newPosX;
-    var newPosY;
     for (var i = 0; i < redCharacters.length; i++){
         if(redHeroCharacters[i]===$(hero).attr('data-name')){
             for (key in heroObj){
                 if(redCharacters[i] == heroObj[key].name){
                     if(previousState=='small'){
-                        newPosX = heroObj[key].posX * 1.5;
-                        newPosY =  heroObj[key].posY * 1.5;
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
+                        heroObj[key].posX*=1.5;
+                        heroObj[key].posY*=1.5;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
                     } else if (previousState=='large'){
-                        newPosX = heroObj[key].posX * 2 * .75;
-                        newPosY =  heroObj[key].posY * 2 * .75;
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
-                    }
+                        heroObj[key].posX*=.75;
+                        heroObj[key].posY*=.75;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                    } 
                 }
             }
         }
@@ -151,21 +144,19 @@ function mediumHero(hero){
 }
 
 function largeHero(hero){
-    var newPosX;
-    var newPosY;
     for (var i = 0; i < redCharacters.length; i++){
         if(redHeroCharacters[i]===$(hero).attr('data-name')){
             for (key in heroObj){
                 if(redCharacters[i] == heroObj[key].name){
                     if(previousState=='small'){
-                        newPosX = heroObj[key].posX * 2;
-                        newPosY =  heroObj[key].posY * 2;
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
+                        heroObj[key].posX*=2;
+                        heroObj[key].posY*=2;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
                     } else if (previousState=='medium'){
-                        newPosX = heroObj[key].posX * 1.5 / .75;
-                        newPosY =  heroObj[key].posY * 1.5/ .75
-                        $(hero).parent().attr('style', `position: absolute;top:${newPosY}px;left:${newPosX}px;z-index:2;${size}`)
-                    }
+                        heroObj[key].posX/=.75;
+                        heroObj[key].posY/=.75;
+                        $(hero).parent().attr('style', `position: absolute;top:${heroObj[key].posY}px;left:${heroObj[key].posX}px;z-index:2;width: 3%; height: auto;`)
+                    } 
                 }
             }
         }
