@@ -106,6 +106,7 @@ $(document).ready(function(){
 });
 // this whole section is for dynamically matching the canvas to the map size
 function matchCanvas() {
+    //haha
     var scrollDiv = document.createElement("div");
 
     scrollDiv.className = "scrollbar-measure";
