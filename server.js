@@ -6,10 +6,6 @@ var bodyParser = require('body-parser')
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars')
 
-app.get('/', function(req, res) {
-    res.send('Welcome to Passport with Sequelize');
-}); 
-
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

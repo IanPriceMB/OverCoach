@@ -43,7 +43,6 @@ for (let p = 0; p < charactersArr.length; p++){
     $("#blueHero" + charactersArr[p]).attr("src", bluePath+charactersArr[p]+'.png');
 }
 for (let i = 0; i < mapsArr.length; i++){
-    console.log('hi')
     $("#mapDropDown").append("<div class='map-name' id='"+mapsArr[i]+"' data-img-src='" + mapPath + mapsArr[i] +".png'>")
     $('#'+mapsArr[i]).text(mapsArr[i].replace(/_/g, " "));
 }
@@ -57,10 +56,13 @@ $(document).ready(function(){
         document.getElementById("colorDropDown").classList.toggle("show");
     })
     $('.map-name').on('click', function(){
+        previousState = 'small';
         var path = $(this).attr('data-img-src')
         $('.map-div').empty()
-        $('.map-div').append('<img id="mapMe">')
-        $('#mapMe').attr('src', path)
+        var img = new Image();
+        img.src = path;
+        $('.map-div').append(img)
+        $('.map-div > img').attr("id", "mapMe")
         $('#mapMe').addClass('small')
         matchCanvas();
     })

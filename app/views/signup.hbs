@@ -2,11 +2,20 @@
 <html>
  
 <head>
-    <title></title>
+    <title>Over Coach</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/signup.css">
 </head>
  
 <body>
-    <form id="signup" name="signup" method="post" action="/signup">
+    <header class="mainScreen-Header">
+        <img class="title" src="/OverCoach/Title.png">
+        <nav class="mainScreen-Header-Nav">
+            {{!-- <a href="/profile">Profile</a> --}}
+            <a href="/signin">Sign In</a>
+        </nav>
+    </header>
+    <form class="signup-form" id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
         <label for="firstname">Firstname</label>

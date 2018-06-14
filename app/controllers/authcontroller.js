@@ -14,3 +14,6 @@ exports.logout = function(req, res) {
         res.redirect('/');
     });
 }
+exports.landingpage = function(req, res) {
+        res.redirect('/');
+}
