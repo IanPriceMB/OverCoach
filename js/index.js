@@ -107,14 +107,14 @@ $(document).ready(function(){
         $(".about-div").remove();
     });
     $('#hotkeys').on('click', function(){
-        if($('hotkey-div').length == 0){
+        if($('.hotkey-div').length == 0){
             $('body').append('<div class="hotkey-div">')
             $('.hotkey-div').append('<p class="hotkey-p">')
-            $('.hotkey-p').html(`Q = White Pen
+            $('.hotkey-p').html(`Q = Black Pen
             <br><br>
-            W = Blue Pen
+            W = White Pen
             <br><br>
-            E = Black Pen
+            E = Blue Pen
             <br><br>
             R = Red Pen
             <br>

@@ -75,7 +75,7 @@ $(document).on("keypress",function(e) {
         if($('.hotkey-div').length == 0){
             $('body').append('<div class="hotkey-div">')
             $('.hotkey-div').append('<p class="hotkey-p">')
-            $('.hotkey-p').html(`Q = White Pen<br><br>W = Blue Pen<br><br>E = Black Pen<br><br>R = Red Pen
+            $('.hotkey-p').html(`Q = Black Pen<br><br>W = White Pen<br><br>E = Blue Pen<br><br>R = Red Pen
             <br>
             <br>
             T = Eraser<br><br>Ctrl+Click = Clear Hero From the Board<br><br>L = Clear All Lines<br><br>H = Reset All Heroes
