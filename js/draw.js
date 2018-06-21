@@ -31,7 +31,6 @@ canvas.addEventListener("mouseout", function (e) {
     }, false);
 }
 
-
 function findxy(res, e) {
     //when clicked set flags and variables
     if (res == 'down') {
@@ -88,7 +87,6 @@ $('.colorLi').on('click', function(){
 $('#eraser').on('click', function(){
     mode="eraser";
 })
-
 
 //draw the lines on the canvas
 function draw() {
