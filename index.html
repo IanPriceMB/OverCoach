@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Over Coach</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+</head>
+ 
+<body>
+    <!-- this section is for the header -->
+    <header class="header">
+        <img class="header-title" src="static/Title.png">
+    </header>
+
+    <!-- this section is for the tool bar and buttons -->
+    <toolbar class="toolbar clearfix">
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id='ddMapsBtn'>Maps</button>
+                <div class="ddMapsBtn-content" id="mapdd">      
+                <!-- maps go here-->
+                </div>
+        </div>
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id="ddColorsBtn">Colors</button>
+                <div class="ddColorsBtn-content" id="colordd" >
+                    <li class="colorLi" id="colorLi-red" data-color="red"></li>
+                    <li class="colorLi" id="colorLi-blue" data-color="blue"></li>
+                    <li class="colorLi" id="colorLi-black" data-color="black"></li>
+                    <li class="colorLi" id="colorLi-white" data-color="white"></li>
+                </div>
+        </div>
+
+        <!-- these buttons dont have dropdowns -->
+        <div class="toolbar-item">
+                <button class="toolbar-btn" id="eraser" data-name="eraser">Eraser</button>
+            </div>
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id="lines">Reset Lines</button>
+        </div>
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id="heroes">Reset Heroes</button>
+        </div>
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id="about" data-name="about">About</button>
+        </div>
+        <div class="toolbar-item">
+            <button class="toolbar-btn" id="hotkeys" data-name="hotkeys">Hotkeys</button>
+        </div>
+    </toolbar>
+
+    <!-- this section is for the side bar where the heroes go -->
+    <sidebar class="sidebar">
+        <a href="https://www.patreon.com/OverCoach" target="_blank"><img class="patreon" src="static/Patreon.png"></a>
+
+        <div class="sidebar-characters" id="redCharacters"></div>
+        <div class="sidebar-characters" id="blueCharacters"></div>
+    </sidebar>
+    <div class="easel" id="easel">
+            <canvas class="canvas" id="canvas"></canvas>
+    </div>
+
+    <!-- loading in my scripts -->
+    <script src="index.js"></script>
+    <script src="hotkeys.js"></script>
+    <script src="draw.js"></script>
+    <script src="dragNDrop.js"></script>
+</body>
+ 
+</html>
