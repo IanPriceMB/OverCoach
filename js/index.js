@@ -13,6 +13,7 @@ const mapsArr=
         "Nepal",
         "Numbani",
         "Oasis",
+        "Rialto",
         "Route_66",
         "Temple_of_Anubis",
         "Volskaya_Industries",
