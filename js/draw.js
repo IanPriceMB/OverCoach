@@ -39,23 +39,27 @@ function findxy(res, e) {
         currX = e.clientX - canvas.getBoundingClientRect().left;
         currY = e.clientY - canvas.getBoundingClientRect().top;
         flag = true;
+        $('#canvas').css({'z-index': '4'})
         //this section just starts the line where you first click
         if(mode=="pen"){
+            $('#easel').removeClass('.crosshair')
             ctx.globalCompositeOperation="source-over";
             ctx.beginPath();
             ctx.fillStyle = x;
             ctx.fillRect(currX, currY, 2, 2);
             ctx.closePath();
         } 
-        if(mode=='eraser')
-        {
+        if(mode=='eraser'){
+            $('#easel').addClass('.crosshair')
             ctx.globalCompositeOperation="destination-out";
             ctx.arc(currX, currY,10,0,Math.PI*2,false);
             ctx.fill();
-          }
+        }
     }
     //if mouse up or outside of canvas stop drawing
     if (res == 'up' || res == "out") {
+        $('#easel').removeClass('.crosshair')
+        $('#canvas').css({'z-index': '2'})
         flag = false;
     }
     //while mouse down and moving loop your mouse positions and draw
@@ -87,10 +91,18 @@ $('.colorLi').on('click', function(){
 $('#eraser').on('click', function(){
     mode="eraser";
 })
-
 //draw the lines on the canvas
 function draw() {
+    $('#canvas').css({'z-index': '4'})
     ctx.globalCompositeOperation="source-over";
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.closePath();
+
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
@@ -109,10 +121,13 @@ function getCanvasCoordinates(event) {
     
 }
 function eraser(event){
+    $('#canvas').css({'z-index': '4'})
     var position = getCanvasCoordinates(event);
+
     ctx.globalCompositeOperation="destination-out";
     ctx.beginPath();
     ctx.arc(position.x,position.y,10,0,Math.PI*2,false);
     ctx.fill();
     ctx.closePath();
 }
+

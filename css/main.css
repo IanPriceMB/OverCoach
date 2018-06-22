@@ -56,7 +56,7 @@ body, html{
     background: linear-gradient( white , black);
 }
 .sidebar-characters{
-    height: 40%;
+    height: 37%;
     overflow: auto;
 }
 .hero {
@@ -67,14 +67,6 @@ body, html{
 .hero img{
     display: block;
     width: 100%;
-}
-.moved{
-    border-radius: 40px;
-}
-.moved img{
-    display: block;
-    width: 100%;
-    border-radius: 40px;
 }
 .patreon{
     max-width: 100%;
@@ -97,7 +89,9 @@ body, html{
     position: absolute;
     z-index: 1;
 }
-
+.crosshair {
+    cursor: crosshair;
+}
 /* Dropdown Buttons section */
 .toolbar-btn, .closeBtn, .closeBtn2{
     background-color: rgb(71, 68, 68);

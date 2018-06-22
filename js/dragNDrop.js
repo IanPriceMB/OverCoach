@@ -149,7 +149,6 @@ $(document).ready(function(){
             dragability();
         }
     });
-
     // b for board clear
     $(document).on("keypress",function(e) {
         if(e.key == 'b') {
